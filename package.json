@@ -1,7 +1,7 @@
 {
   "name": "showdown-prism",
   "version": "0.1.1",
-  "description": "Markdown to Html Converter",
+  "description": "Showdown extension for Prism.Js",
   "type": "module",
   "scripts": {
     "build": "tsup"
@@ -17,12 +17,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+"
+    "url": "git+https://github.com/phothinmg/showdown-prism.git"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
     "@types/he": "^1.2.3",
     "@types/node": "^20.10.5",
+    "@types/prismjs": "^1.26.3",
     "@types/showdown": "^2.0.6",
     "tsup": "^8.0.2",
     "typescript": "^5.3.3"
