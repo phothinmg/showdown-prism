@@ -54,5 +54,6 @@ function showdownPrism(): ShowdownExtension[] {
 
 Showdown.extension("showdownPrism", showdownPrism);
 
-export default showdownPrism;
+// export default showdownPrism;
 
+module.exports = showdownPrism;
