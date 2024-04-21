@@ -1,5 +1,11 @@
 # showdown-prism
 
+## 0.1.3
+
+### Patch Changes
+
+- add jsdilvar
+
 ## 0.1.2
 
 ### Patch Changes

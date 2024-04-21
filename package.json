@@ -1,6 +1,6 @@
 {
   "name": "showdown-prism",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Showdown extension for Prism.Js",
   "scripts": {
     "build": "tsup"
@@ -8,9 +8,9 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.mts",
-  "jsdelivr":{
+  "jsdelivr": {
     "copy_btn": "dist/prismjs/prism-copy-btn.css",
-    "themes":{
+    "themes": {
       "cb": "dist/prismjs/theme/cb.css"
     }
   },
