@@ -2,18 +2,24 @@
   "name": "showdown-prism",
   "version": "0.1.2",
   "description": "Showdown extension for Prism.Js",
-  "type": "module",
   "scripts": {
     "build": "tsup"
   },
   "main": "dist/index.js",
-  "types": "./dist/index.d.ts",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.mts",
+  "jsdelivr":{
+    "copy_btn": "dist/prismjs/prism-copy-btn.css",
+    "themes":{
+      "cb": "dist/prismjs/theme/cb.css"
+    }
+  },
   "author": "Pho Thin Maung",
   "license": "Apache-2.0",
   "keywords": [
     "Markdown",
     "Showdown",
-    "converter"
+    "Prism.js"
   ],
   "repository": {
     "type": "git",
@@ -25,14 +31,12 @@
     "@types/node": "^20.10.5",
     "@types/prismjs": "^1.26.3",
     "@types/showdown": "^2.0.6",
-    "browserslist": "^4.23.0",
-    "esbuild-plugin-browserslist": "^0.11.1",
+    "he": "^1.2.0",
     "terser": "^5.30.3",
     "tsup": "^8.0.2",
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "he": "^1.2.0",
     "prismjs": "^1.29.0",
     "showdown": "^2.1.0"
   }
