@@ -8,12 +8,6 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.mts",
-  "jsdelivr": {
-    "copy_btn": "dist/prismjs/prism-copy-btn.css",
-    "themes": {
-      "cb": "dist/prismjs/theme/cb.css"
-    }
-  },
   "author": "Pho Thin Maung",
   "license": "Apache-2.0",
   "keywords": [
@@ -31,12 +25,12 @@
     "@types/node": "^20.10.5",
     "@types/prismjs": "^1.26.3",
     "@types/showdown": "^2.0.6",
-    "he": "^1.2.0",
     "terser": "^5.30.3",
     "tsup": "^8.0.2",
     "typescript": "^5.3.3"
   },
   "dependencies": {
+    "he": "^1.2.0",
     "prismjs": "^1.29.0",
     "showdown": "^2.1.0"
   }

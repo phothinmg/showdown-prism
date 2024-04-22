@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      he:
+        specifier: ^1.2.0
+        version: 1.2.0
       prismjs:
         specifier: ^1.29.0
         version: 1.29.0
@@ -30,9 +33,6 @@ importers:
       '@types/showdown':
         specifier: ^2.0.6
         version: 2.0.6
-      he:
-        specifier: ^1.2.0
-        version: 1.2.0
       terser:
         specifier: ^5.30.3
         version: 5.30.3

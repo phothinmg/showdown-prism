@@ -2,19 +2,19 @@
 import { defineConfig } from "tsup";
 
 export default defineConfig({
-  entry: ["./src/index.ts"],
-  outDir:"./dist/browser",
+  entry: ["./src/index.mts"],
+  outDir:"./dist",
   splitting: true,
   sourcemap: true,
-  // dts: true,
-  format: "iife",
+  dts: true,
+  format: "esm",
   bundle: true,
   treeshake: true,
-  // minify: true,
-  external: ["showdown","prismjs"],
-  // terserOptions: {
-  //   compress: {
-  //     unsafe_regexp: true,
-  //   },
-  // },
+  minify: true,
+  external: ["showdown","prismjs","he"],
+  terserOptions: {
+    compress: {
+      unsafe_regexp: true,
+    },
+  },
 });
