@@ -15,6 +15,7 @@ function showdownPrism(): ShowdownExtension[] {
     {
       type: "output",
       filter: (text, converter, options) => {
+        
         const params = {
           left: "<pre><code\\b[^>]*>",
           right: "</code></pre>",
