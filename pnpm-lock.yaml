@@ -8,6 +8,15 @@ importers:
 
   .:
     dependencies:
+      '@types/he':
+        specifier: ^1.2.3
+        version: 1.2.3
+      '@types/prismjs':
+        specifier: ^1.26.3
+        version: 1.26.3
+      '@types/showdown':
+        specifier: ^2.0.6
+        version: 2.0.6
       he:
         specifier: ^1.2.0
         version: 1.2.0
@@ -21,18 +30,9 @@ importers:
       '@changesets/cli':
         specifier: ^2.27.1
         version: 2.27.1
-      '@types/he':
-        specifier: ^1.2.3
-        version: 1.2.3
       '@types/node':
         specifier: ^20.10.5
         version: 20.12.7
-      '@types/prismjs':
-        specifier: ^1.26.3
-        version: 1.26.3
-      '@types/showdown':
-        specifier: ^2.0.6
-        version: 2.0.6
       terser:
         specifier: ^5.30.3
         version: 5.30.3
