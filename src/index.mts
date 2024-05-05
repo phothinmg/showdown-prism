@@ -1,10 +1,8 @@
 import Showdown, { ShowdownExtension } from "showdown";
-import loadLanguages from "prismjs/components/index.js";
 import Prism from "prismjs";
 import pkg from "he";
 const { decode } = pkg;
-loadLanguages.silent = true;
-loadLanguages();
+
 /**
  * Returns an array of Showdown extensions that can be used to highlight code blocks in the output of Showdown.
  * @returns {ShowdownExtension[]} An array of Showdown extensions.
