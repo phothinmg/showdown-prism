@@ -1,7 +1,7 @@
 import Showdown, { ShowdownExtension } from "showdown";
 import Prism from "prismjs";
 import { decode } from "he";
-import loadLanguages from "prismjs/components/index";
+
 
 
 /**
@@ -23,7 +23,6 @@ function showdownPrism(): ShowdownExtension[] {
                     leftMatch: string,
                     rightMatch: string
                 ) => {
-                    loadLanguages()
                     const lang =
                         leftMatch.match(/class=\"([^ \"]+)/)?.[1] ?? undefined;
                     if (lang) {
