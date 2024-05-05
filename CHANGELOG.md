@@ -1,5 +1,11 @@
 # showdown-prism
 
+## 0.2.2
+
+### Patch Changes
+
+- fixing bugs
+
 ## 0.2.1
 
 ### Patch Changes
