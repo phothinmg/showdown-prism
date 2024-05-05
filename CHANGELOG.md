@@ -1,5 +1,11 @@
 # showdown-prism
 
+## 0.2.4
+
+### Patch Changes
+
+- decode , he package
+
 ## 0.2.3
 
 ### Patch Changes

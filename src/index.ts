@@ -1,6 +1,7 @@
 import Showdown, { ShowdownExtension } from "showdown";
 import Prism from "prismjs";
-import { decode } from "he";
+import pkg from 'he';
+const { decode } = pkg;
 
 
 
