@@ -10,7 +10,34 @@ const loadLanguages = require("prismjs/components/");
  * @memberof ShowdownPrism
  * @type {string[]}
  */
-const themes = ["actom-dark", "cb", "coldark-dark", "dark", "holi-theme"];
+const themes = [
+    "actom-dark",
+    "cb",
+    "coldark-dark",
+    "dark",
+    "holi-theme",
+    "duotone-earth",
+    "duotone-forest",
+    "duotone-light",
+    "duotone-sea",
+    "duotone-space",
+    "funky",
+    "ghcolors",
+    "gruvbox-light",
+    "laserwave",
+    "lucario",
+    "night-owl",
+    "okaidia",
+    "one-dark",
+    "one-light",
+    "solarized-dark-atom",
+    "synthwave84",
+    "tomorrow",
+    "twilight",
+    "vs",
+    "vsc-dark-plus",
+    "z-touch"
+];
 
 /**
  * **Langguage from "class" from code tag**

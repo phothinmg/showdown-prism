@@ -34,17 +34,42 @@ yarn add showdown showdown-prism
 
 **Set Up**
 
+esm
+
 ```js
 import showdown from "showdown";
 import showdownprism from "showdown-prism";
 // Add extension to showdown options
 const converter = new showdown.Converter({
-  extensions: [showdownprism],
+  extensions: [showdownPrism({
+            langs: ["bash"],
+            theme: "holi-theme",
+            copyToClipboard: true,
+        }),],
 });
 // Convert to HTML
 const convertedContent = converter.makeHtml(/*your markdown content*/)
 
 ```
+
+common js
+
+```js
+const showdown = require("showdown");
+const showdownPrism = require("showdown-prism");
+// Add extension to showdown options
+const converter = new showdown.Converter({
+  extensions: [showdownPrism({
+            langs: ["bash"],
+            theme: "holi-theme",
+            copyToClipboard: true,
+        }),],
+});
+// Convert to HTML
+const convertedContent = converter.makeHtml(/*your markdown content*/)
+
+```
+
 ---
 
 
@@ -61,7 +86,35 @@ const convertedContent = converter.makeHtml(/*your markdown content*/)
 - Only available bundler was false.
  
 **3.theme : string**
-- Available themes
+- Available themes 
+  
+    `actom-dark`
+    `cb`
+    `coldark-dark`
+    `dark`
+    `holi-theme`
+    `duotone-earth`
+    `duotone-forest`
+    `duotone-light`
+    `duotone-sea`
+    `duotone-space`
+    `funky`
+    `ghcolors`
+    `gruvbox-light`
+    `laserwave`
+    `lucario`
+    `night-owl`
+    `okaidia`
+    `one-dark`
+    `one-light`
+    `solarized-dark-atom`
+    `synthwave84`
+    `tomorrow`
+    `twilight`
+    `vs`
+    `vsc-dark-plus`
+    `z-touch`
+
 - This create  link tag of available themes in your html head element.
 
 **4.copyToClipboard :  boolean**
