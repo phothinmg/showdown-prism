@@ -2,12 +2,9 @@
   "name": "showdown-prism",
   "version": "0.2.4",
   "description": "Showdown extension for Prism.Js",
-  "scripts": {
-    "build": "tsup"
-  },
-  "type": "module",
-  "main": "dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./src/index.js",
+  "module": "./src/index.mjs",
+  "types": "./src/index.d.ts",
   "author": "Pho Thin Maung",
   "license": "Apache-2.0",
   "keywords": [
@@ -22,8 +19,6 @@
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
     "@types/node": "^20.10.5",
-    "terser": "^5.30.3",
-    "tsup": "^8.0.2",
     "typescript": "^5.3.3"
   },
   "dependencies": {

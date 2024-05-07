@@ -1,6 +1,9 @@
-const showdown = require("showdown");
-const { decode } = require("he");
+import Showdown from "showdown";
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
 const Prism = require("prismjs");
+import pkg from "he";
+const { decode } = pkg;
 const loadLanguages = require("prismjs/components/");
 /**
  * @namespace ShowdownPrism
@@ -77,7 +80,7 @@ const lang = (text) => {
  *
  */
 
-const showdownPrism = ({
+export const showdownPrism = ({
     bundler = false,
     langs = [],
     theme = "dark",
@@ -130,7 +133,7 @@ const showdownPrism = ({
              * @return {string} The filtered text.
              */
             filter: function (text, converter, options) {
-                return showdown.helper.replaceRecursiveRegExp(
+                return Showdown.helper.replaceRecursiveRegExp(
                     text,
                     replacement,
                     params.left,
@@ -249,6 +252,6 @@ const showdownPrism = ({
         },
     ];
 };
-showdown.extension("showdownPrism", showdownPrism());
+Showdown.extension("showdownPrism", showdownPrism());
 
-module.exports = showdownPrism;
+export default showdownPrism;

@@ -36,10 +36,10 @@ yarn add showdown showdown-prism
 
 ```js
 import showdown from "showdown";
-import showdownprism from "showdown-prism";
+import showdownPrism from "showdown-prism";
 // Add extension to showdown options
 const converter = new showdown.Converter({
-  extensions: [showdownprism],
+  extensions: [showdownPrism],
 });
 // Convert to HTML
 const convertedContent = converter.makeHtml(/*your markdown content*/)
@@ -47,29 +47,28 @@ const convertedContent = converter.makeHtml(/*your markdown content*/)
 ```
 ---
 
+### Theme
 
-## Params
+Themes are available at : 
+- My repo , pre minified by jsDelivr - https://github.com/phothinmg/prism-themes
 
-**1.bundler : boolean**
-- Default false
-- If you use Webpack or another bundler set to true, as this will cause Webpack to include all languages and plugins.
-- If true , next parameter langs will disable.
+- Prism Themes on Github by Prism JS - https://github.com/PrismJS/prism-themes
 
-**2.langs :  string | string[ ]**
-- Prismjs will load the default languages: markup, css, clike and javascript.
-- You can load more languages with the options.langs.
-- Only available bundler was false.
- 
-**3.theme : string**
-- Available themes
-- This create  link tag of available themes in your html head element.
+- Prism Themes on jsDelivr - https://www.jsdelivr.com/package/npm/prism-themes
 
-**4.copyToClipboard :  boolean**
-- Default false
-- Do not confuse with Prism Js plugin , copy-to-clipboard
+- Prism-themes on cdnjs - https://cdnjs.com/libraries/prism-themes
 
----
-
-
-
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        ...
+        <link href="your_css_link_here" rel="stylesheet" />
+    </head>
+    <body>
+        ...
+        <script src="prism.js"></script>
+    </body>
+</html>
+```
 
