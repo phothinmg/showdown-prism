@@ -1,5 +1,11 @@
 # showdown-prism
 
+## 1.0.0
+
+### Major Changes
+
+- Fix extension and check it is correct or not.First stable release
+
 ## 0.2.4
 
 ### Patch Changes
