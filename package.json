@@ -1,6 +1,6 @@
 {
   "name": "showdown-prism",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Showdown extension for Prism.Js",
   "main": "./src/index.js",
   "module": "./src/index.mjs",

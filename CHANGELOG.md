@@ -1,5 +1,11 @@
 # showdown-prism
 
+## 1.0.1
+
+### Patch Changes
+
+- .npmignore fix
+
 ## 1.0.0
 
 ### Major Changes
