@@ -22,7 +22,7 @@ import Showdown from "showdown";
 import type { ShowdownExtension } from "showdown";
 import Prism from "prismjs";
 import loadLanguages from "prismjs/components/index.js";
-import pkg from 'he';
+import pkg from "he";
 const { decode } = pkg;
 import { JSDOM } from "jsdom";
 
@@ -69,18 +69,18 @@ const defaultTheme: string = "vs";
  * @param {string} theme - The theme name.
  * @returns {HTMLLinkElement} The link element of the theme.
  */
-const loadTheme = (theme: string): HTMLLinkElement => {
-    let themeLink;
-    if (themes.includes(theme)) {
-        themeLink = `https://cdn.jsdelivr.net/gh/phothinmg/prism-themes@main/theme/${theme}.min.css`;
-    } else {
-        themeLink = `https://cdn.jsdelivr.net/gh/phothinmg/prism-themes@main/theme/${defaultTheme}.min.css`;
-    }
-    const themeEl = window.document.createElement("link");
-    themeEl.setAttribute("rel", "stylesheet");
-    themeEl.setAttribute("href", themeLink);
-    return window.document.head.appendChild(themeEl);
-};
+// const loadTheme = (theme: string): HTMLLinkElement => {
+//     let themeLink;
+//     if (themes.includes(theme)) {
+//         themeLink = `https://cdn.jsdelivr.net/gh/phothinmg/prism-themes@main/theme/${theme}.min.css`;
+//     } else {
+//         themeLink = `https://cdn.jsdelivr.net/gh/phothinmg/prism-themes@main/theme/${defaultTheme}.min.css`;
+//     }
+//     const themeEl = window.document.createElement("link");
+//     themeEl.setAttribute("rel", "stylesheet");
+//     themeEl.setAttribute("href", themeLink);
+//     return window.document.head.appendChild(themeEl);
+// };
 
 type ShowdownPrismOptions = {
     languages?: string[];
@@ -122,69 +122,19 @@ type ShowdownPrismOptions = {
         // Convert to HTML
         const convertedContent = converter.makeHtml("Markdown_contents")
  */
-const showdownPrism = (options?: ShowdownPrismOptions): ShowdownExtension => {
-    /**
-     * The list of languages to load.
-     *
-     * If not specified, the extension will load the default languages:
-     * `markup`, `css`, `clike` and `javascript`.
-     *
-     * @memberof ShowdownPrism
-     * @type {string[]}
-     */
+const showdownPrism = (
+    options?: ShowdownPrismOptions
+): ShowdownExtension | ShowdownExtension[] => {
     const langs: string[] = options?.languages ?? [];
 
-    /**
-     * The theme to use.
-     *
-     * The extension will load the theme from cdn.jsdelivr.net.
-     *
-     * @memberof ShowdownPrism
-     * @type {string}
-     */
     const theme: string = options?.theme ?? `${defaultTheme}`;
-
-    /**
-     * Load the specified languages.
-     *
-     * This loads the languages from the Prism.js component repository.
-     *
-     * @param {string[]} langs - The list of languages to load.
-     */
     loadLanguages(langs);
 
-    /**
-     * Load the specified theme.
-     *
-     * This loads the theme from cdn.jsdelivr.net.
-     *
-     * @param {string} theme - The theme name.
-     * @returns {HTMLLinkElement} The link element of the theme.
-     */
-
-    loadTheme(theme);
-
-    /**
-     * The regular expression to use for replacing code blocks.
-     *
-     * @memberof ShowdownPrism
-     * @type {RegExp}
-     */
     const params = {
         left: "<pre><code\\b[^>]*>",
         right: "</code></pre>",
         flags: "g",
     };
-
-    /**
-     * Replaces the matched code block with a highlighted version using Prism.js.
-     *
-     * @param {string} wholematch - The entire matched code block.
-     * @param {string} match - The matched code within the code block.
-     * @param {string} left - The left delimiter of the code block.
-     * @param {string} right - The right delimiter of the code block.
-     * @return {string} The highlighted version of the code block, or the original code block if no language is specified.
-     */
     const replacement = (
         wholematch: string,
         match: string,
@@ -207,27 +157,51 @@ const showdownPrism = (options?: ShowdownPrismOptions): ShowdownExtension => {
         }
     };
 
-    return {
-        type: "output",
+    return [
+        {
+            type: "output",
 
-        /**
-         * A function that filters the given text using the Showdown helper's replaceRecursiveRegExp method.
-         *
-         */
-        filter: (
-            text: string,
-            converter: Showdown.Converter,
-            options: any
-        ): string => {
-            return Showdown.helper.replaceRecursiveRegExp(
-                text,
-                replacement,
-                params.left,
-                params.right,
-                params.flags
-            );
+            /**
+             * A function that filters the given text using the Showdown helper's replaceRecursiveRegExp method.
+             *
+             */
+            filter: (
+                text: string,
+                converter: Showdown.Converter,
+                options: any
+            ): string => {
+                return Showdown.helper.replaceRecursiveRegExp(
+                    text,
+                    replacement,
+                    params.left,
+                    params.right,
+                    params.flags
+                );
+            },
         },
-    };
+        {
+            type: "output",
+            filter: (
+                text: string,
+                converter: Showdown.Converter,
+                options: any
+            ) => {
+                const scriptTag = `
+                <script>
+                function loadTheme(){
+                 const themeLink = \`https://cdn.jsdelivr.net/gh/phothinmg/prism-themes@main/theme/${theme}.min.css\`;
+                 const themeEl = window.document.createElement("link");
+                themeEl.setAttribute("rel", "stylesheet");
+                themeEl.setAttribute("href", themeLink);
+                window.document.head.appendChild(themeEl);
+                };
+                loadTheme();
+                </script>
+                `;
+                return text + scriptTag;
+            },
+        },
+    ];
 };
 
 Showdown.extension("showdownPrism", showdownPrism());
