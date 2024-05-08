@@ -18,7 +18,6 @@
    limitations under the License.
  */
 
-
 import Showdown from "showdown";
 import type { ShowdownExtension } from "showdown";
 import Prism from "prismjs";
@@ -89,11 +88,38 @@ type ShowdownPrismOptions = {
 
 /**
  * A Showdown extension for Prism.js.
- *
+ * ---
  * This extension adds syntax highlighting to code blocks in markdown documents
  * using Prism.js. This extension is meant to be used with the Showdown library.
- *
- * @namespace ShowdownPrism
+ * 
+ * 
+ * **Options** 
+ * 
+ * **1.languages ? :  string[ ]**
+ * 
+   - Prismjs will load the default languages: markup, css, clike and javascript.
+
+   - You can load more languages with the `options.languages`.
+        If you use Webpack or another bundler , do not set `options.languages`.
+ * 
+ * **2.theme ? : string**
+ *   
+ * - Available themes can be see in README.md
+
+
+ * @example
+ * 
+ * import showdown from "showdown";
+        import showdownprism from "showdown-prism";
+        // Add extension to showdown options
+        const converter = new showdown.Converter({
+        extensions: [showdownPrism({
+                    langs: ["bash"],
+                    theme: "holi-theme",
+                }),],
+        });
+        // Convert to HTML
+        const convertedContent = converter.makeHtml("Markdown_contents")
  */
 const showdownPrism = (options?: ShowdownPrismOptions): ShowdownExtension => {
     /**

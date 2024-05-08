@@ -2,9 +2,8 @@
   "name": "showdown-prism",
   "version": "1.0.1",
   "description": "Showdown extension for Prism.Js",
-  "main": "./src/index.js",
-  "module": "./src/index.mjs",
-  "types": "./src/index.d.ts",
+  "main": "dist/index.js",
+  "types": "./dist/index.d.ts",
   "author": "Pho Thin Maung",
   "license": "Apache-2.0",
   "keywords": [

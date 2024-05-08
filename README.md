@@ -1,18 +1,17 @@
-
 ## Showdown Prism
 
-***Showdown extension for Prism.Js***
+**_Showdown extension for Prism.Js_**
 
 **_esm only_**
 
-Highlight the code block with Prism.JS.
----
+## Highlight the code block with Prism.JS.
 
 ![Showdown](https://raw.githubusercontent.com/showdownjs/logo/master/dist/logo.readme.png)
 
-![Prism](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbjWKYf_38hFwIwCIsKaqoUrbVIm6UaNw1Ww&s)   
+![Prism](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbjWKYf_38hFwIwCIsKaqoUrbVIm6UaNw1Ww&s)
 
 ---
+
 ## Documentation
 
 ### Getting Started
@@ -33,7 +32,6 @@ pnpm i showdown showdown-prism
 yarn add showdown showdown-prism
 ```
 
-
 **Set Up**
 
 esm
@@ -43,32 +41,31 @@ import showdown from "showdown";
 import showdownprism from "showdown-prism";
 // Add extension to showdown options
 const converter = new showdown.Converter({
-  extensions: [showdownPrism({
+    extensions: [
+        showdownPrism({
             langs: ["bash"],
             theme: "holi-theme",
-            copyToClipboard: true,
-        }),],
+        }),
+    ],
 });
 // Convert to HTML
-const convertedContent = converter.makeHtml(/*your markdown content*/)
-
+const convertedContent = converter.makeHtml(/*your markdown content*/);
 ```
-
-
 
 ---
 
-
 ## Options
 
-**1.languages ? :  string[ ]**
-- Prismjs will load the default languages: markup, css, clike and javascript.
-- You can load more languages with the `options.languages`.
-  If you use Webpack or another bundler , do not set `options.languages`.
- 
+**1.languages ? : string[ ]**
+
+-   Prismjs will load the default languages: markup, css, clike and javascript.
+-   You can load more languages with the `options.languages`.
+    If you use Webpack or another bundler , do not set `options.languages`.
+
 **2.theme ? : string**
-- Available themes 
-  
+
+-   Available themes
+
     `actom-dark`
     `cb`
     `coldark-dark`
@@ -96,10 +93,6 @@ const convertedContent = converter.makeHtml(/*your markdown content*/)
     `vsc-dark-plus`
     `z-touch`
 
-- This create  link tag of available themes in your html head element.
+-   This create link tag of available themes in your html head element.
 
 ---
-
-
-
-
