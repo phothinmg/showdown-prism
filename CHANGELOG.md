@@ -1,5 +1,11 @@
 # showdown-prism
 
+## 1.0.4
+
+### Patch Changes
+
+- fix he pkg
+
 ## 1.0.3
 
 ### Patch Changes
