@@ -1,11 +1,6 @@
 node_modules
 package-lock.json
 .npmignore
-aa.js
-hero.md
-a.js
-b.js
-hero.md
-nn.txt
-ind.html
+test
+pnpm-lock.yaml
 dist

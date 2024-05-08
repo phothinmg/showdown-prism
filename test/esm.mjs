@@ -1,8 +1,8 @@
 import showdown from "showdown";
 import fs from "fs";
-import showdownPrism from "../src/index.mjs";
+import showdownPrism from "./index.mjs";
 
-const content = fs.readFileSync("./aa.md", "utf-8");
+// const content = fs.readFileSync("./aa.md", "utf-8");
 
 const converter = new showdown.Converter({
     parseImgDimensions: true,
@@ -22,7 +22,7 @@ const converter = new showdown.Converter({
     ],
 });
 converter.setFlavor("github");
-const html = converter.makeHtml(content);
+const html = converter.makeHtml("#lee");
 
 const temp = `
 <!DOCTYPE html>
@@ -43,5 +43,6 @@ const temp = `
 </html>
 `;
 
-fs.writeFileSync("index.html", temp);
+// fs.writeFileSync("index.html", temp);
+console.log(showdown.validateExtension(showdownPrism()))
 

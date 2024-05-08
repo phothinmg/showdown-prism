@@ -3,6 +3,8 @@
 
 ***Showdown extension for Prism.Js***
 
+**_esm only_**
+
 Highlight the code block with Prism.JS.
 ---
 
@@ -52,40 +54,19 @@ const convertedContent = converter.makeHtml(/*your markdown content*/)
 
 ```
 
-common js
 
-```js
-const showdown = require("showdown");
-const showdownPrism = require("showdown-prism");
-// Add extension to showdown options
-const converter = new showdown.Converter({
-  extensions: [showdownPrism({
-            langs: ["bash"],
-            theme: "holi-theme",
-            copyToClipboard: true,
-        }),],
-});
-// Convert to HTML
-const convertedContent = converter.makeHtml(/*your markdown content*/)
-
-```
 
 ---
 
 
-## Params
+## Options
 
-**1.bundler : boolean**
-- Default false
-- If you use Webpack or another bundler set to true, as this will cause Webpack to include all languages and plugins.
-- If true , next parameter langs will disable.
-
-**2.langs :  string | string[ ]**
+**1.languages ? :  string[ ]**
 - Prismjs will load the default languages: markup, css, clike and javascript.
-- You can load more languages with the options.langs.
-- Only available bundler was false.
+- You can load more languages with the `options.languages`.
+  If you use Webpack or another bundler , do not set `options.languages`.
  
-**3.theme : string**
+**2.theme ? : string**
 - Available themes 
   
     `actom-dark`
@@ -116,10 +97,6 @@ const convertedContent = converter.makeHtml(/*your markdown content*/)
     `z-touch`
 
 - This create  link tag of available themes in your html head element.
-
-**4.copyToClipboard :  boolean**
-- Default false
-- Do not confuse with Prism Js plugin , copy-to-clipboard
 
 ---
 
