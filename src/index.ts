@@ -21,7 +21,7 @@
 import Showdown from "showdown";
 import type { ShowdownExtension } from "showdown";
 import Prism from "prismjs";
-import loadLanguages from "prismjs/components/index";
+import loadLanguages from "prismjs/components/index.js";
 import { decode } from "he";
 import { JSDOM } from "jsdom";
 
