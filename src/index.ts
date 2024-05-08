@@ -22,7 +22,8 @@ import Showdown from "showdown";
 import type { ShowdownExtension } from "showdown";
 import Prism from "prismjs";
 import loadLanguages from "prismjs/components/index.js";
-import { decode } from "he";
+import pkg from 'he';
+const { decode } = pkg;
 import { JSDOM } from "jsdom";
 
 const lang = (text: string): string => {
