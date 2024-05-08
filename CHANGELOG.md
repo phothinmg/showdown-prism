@@ -1,5 +1,11 @@
 # showdown-prism
 
+## 1.0.3
+
+### Patch Changes
+
+- fix prism loadlanguages
+
 ## 1.0.2
 
 ### Patch Changes
