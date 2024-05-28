@@ -24,14 +24,13 @@ import Prism from "prismjs";
 import loadLanguages from "prismjs/components/index.js";
 import pkg from "he";
 const { decode } = pkg;
-import { JSDOM } from "jsdom";
 
 const lang = (text: string): string => {
     const m = text.match(/class="([^" ]+)/);
     return m ? m[1] : "";
 };
 
-const window = new JSDOM().window;
+
 
 const themes: string[] = [
     "actom-dark",
@@ -61,7 +60,7 @@ const themes: string[] = [
     "vsc-dark-plus",
     "z-touch",
 ];
-const defaultTheme: string = "vs";
+const defaultTheme: string = "okaidia";
 
 /**
  * Load a theme from cdn.jsdelivr.net.
@@ -115,7 +114,7 @@ export interface ShowdownPrismOptions  {
         // Add extension to showdown options
         const converter = new showdown.Converter({
         extensions: [showdownPrism({
-                    langs: ["bash"],
+                    languages: ["bash"],
                     theme: "holi-theme",
                 }),],
         });
