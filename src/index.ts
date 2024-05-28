@@ -82,7 +82,7 @@ const defaultTheme: string = "vs";
 //     return window.document.head.appendChild(themeEl);
 // };
 
-type ShowdownPrismOptions = {
+export interface ShowdownPrismOptions  {
     languages?: string[];
     theme?: string;
 };
