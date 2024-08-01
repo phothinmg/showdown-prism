@@ -1,5 +1,11 @@
 # showdown-prism
 
+## 1.0.7
+
+### Patch Changes
+
+- yuetry
+
 ## 1.0.6
 
 ### Patch Changes
