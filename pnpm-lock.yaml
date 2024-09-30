@@ -8,9 +8,15 @@ importers:
 
   .:
     dependencies:
+      he:
+        specifier: ^1.2.0
+        version: 1.2.0
       prismjs:
         specifier: ^1.29.0
         version: 1.29.0
+      showdown:
+        specifier: ^2.1.0
+        version: 2.1.0
     devDependencies:
       '@changesets/cli':
         specifier: ^2.27.1
@@ -27,12 +33,6 @@ importers:
       '@types/showdown':
         specifier: ^2.0.6
         version: 2.0.6
-      he:
-        specifier: ^1.2.0
-        version: 1.2.0
-      showdown:
-        specifier: ^2.1.0
-        version: 2.1.0
       tsup:
         specifier: ^8.0.2
         version: 8.0.2(typescript@5.4.5)

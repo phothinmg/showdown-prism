@@ -21,17 +21,45 @@
 import Showdown from "showdown";
 import type { ShowdownExtension } from "showdown";
 import Prism from "prismjs";
-import loadLanguages from "prismjs/components/index.js";
+import Module from "node:module";
 import pkg from "he";
 const { decode } = pkg;
+
+//
+const require = Module.createRequire(import.meta.url);
+const loadLanguages = require("prismjs/components/");
 
 const lang = (text: string): string => {
     const m = text.match(/class="([^" ]+)/);
     return m ? m[1] : "";
 };
-
-
-
+export type ThemeType =
+    | "actom-dark"
+    | "cb"
+    | "coldark-dark"
+    | "dark"
+    | "holi-theme"
+    | "duotone-earth"
+    | "duotone-forest"
+    | "duotone-light"
+    | "duotone-sea"
+    | "duotone-space"
+    | "funky"
+    | "ghcolors"
+    | "gruvbox-light"
+    | "laserwave"
+    | "lucario"
+    | "night-owl"
+    | "okaidia"
+    | "one-dark"
+    | "one-light"
+    | "solarized-dark-atom"
+    | "synthwave84"
+    | "tomorrow"
+    | "twilight"
+    | "vs"
+    | "vsc-dark-plus"
+    | "z-touch";
 const themes: string[] = [
     "actom-dark",
     "cb",
@@ -62,29 +90,10 @@ const themes: string[] = [
 ];
 const defaultTheme: string = "okaidia";
 
-/**
- * Load a theme from cdn.jsdelivr.net.
- *
- * @param {string} theme - The theme name.
- * @returns {HTMLLinkElement} The link element of the theme.
- */
-// const loadTheme = (theme: string): HTMLLinkElement => {
-//     let themeLink;
-//     if (themes.includes(theme)) {
-//         themeLink = `https://cdn.jsdelivr.net/gh/phothinmg/prism-themes@main/theme/${theme}.min.css`;
-//     } else {
-//         themeLink = `https://cdn.jsdelivr.net/gh/phothinmg/prism-themes@main/theme/${defaultTheme}.min.css`;
-//     }
-//     const themeEl = window.document.createElement("link");
-//     themeEl.setAttribute("rel", "stylesheet");
-//     themeEl.setAttribute("href", themeLink);
-//     return window.document.head.appendChild(themeEl);
-// };
-
-export interface ShowdownPrismOptions  {
+export interface ShowdownPrismOptions {
     languages?: string[];
-    theme?: string;
-};
+    theme?: ThemeType;
+}
 
 /**
  * A Showdown extension for Prism.js.
